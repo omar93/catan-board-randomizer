@@ -1,5 +1,5 @@
 <script>
-  let { pointTop, id, row } = $props()
+  let { pointTop, id, row, img } = $props()
 
   const isEven = () => {
     return id % 2 == 0
@@ -36,7 +36,7 @@
   <!--Image-->
 
   <image
-    href="forest.jpg"
+    href="{img}.png"
     x="0"
     y="0"
     width="100"
