@@ -23,33 +23,42 @@
     <clipPath id="hexagon-clip">
       <path id="hexagon"
         d="
-        M 25 0 
-        L 0 50
-        L 25 100
-        L 75 100
-        L 100 50
-        L 75 0"
-        fill="url(#wood.bmp)"
+          M 50 0
+          L 0 25
+          L 0 75
+          L 50 100
+          L 100 75
+          L 100 25"
       />
     </clipPath>
   </defs>
 
   <!--Image-->
 
+  <image
+    href="forest.jpg"
+    x="0"
+    y="0"
+    width="100"
+    height="100"
+    preserveAspectRatio="xMidYMid slice"
+    clip-path="url(#hexagon-clip)"
+  />
+
 
 
   <!--Outline-->
   <path
-  d="
-  M 50 0
-  L 0 25
-  L 0 75
-  L 50 100
-  L 100 75
-  L 100 25
-  Z"
-  fill="none"
-  stroke="black"
+    d="
+    M 50 0
+    L 0 25
+    L 0 75
+    L 50 100
+    L 100 75
+    L 100 25
+    Z"
+    fill="none"
+    stroke="black"
   />
 
 
