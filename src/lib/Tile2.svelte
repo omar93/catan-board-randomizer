@@ -1,31 +1,29 @@
 <script>
-  let { id, row, img } = $props()
-  
-  const isEven = () => {
-    return id % 2 == 0
-  }
+  let { column, row, img, numbers } = $props()
 
-  let adjuster = $derived(row === 3 ? 50 : row === 5 ? -50 : 0);
-  let left = $derived(50*id*2+adjuster)
-  let top = $derived(75)
+  let left = 100 * column;
+  let top = 75 * row;
 
-  let leftText = $derived(left+35)
-  let topText = $derived(110)
+  let leftText = left+25
+  let topText = top+25
+
+  let keys = numbers ? Object.keys(numbers) : [];
 
 </script>
 
-<div id="number" style="position: absolute; z-index:5; margin-left:{leftText}px; margin-top:{topText}px;">
-  <span>{id}</span>
+<div id="number" style="position: absolute; margin-left:{leftText}px; margin-top:{topText}px;">
+  <!-- <span>{column}</span> -->
   <!--Section for dots under number-->
   <!-- <div id="dots-wrapper">
   {#each new Array(5) as _, i}
     <div class="dots"></div>
     {/each}
   </div> -->
+  <span>{numbers[Object.keys(numbers)]}</span>
 </div>
 
 <svg viewBox="0 0 100 100" id="hexagon" 
-style="position: absolute; margin-left:{left}; margin-top:{top};">
+style="position: absolute; margin-left:{left}; margin-top:{top}; z-index: -1">
 
   <!--Hexagon-->
   <defs>
@@ -76,29 +74,14 @@ style="position: absolute; margin-left:{left}; margin-top:{top};">
   }
 
   #number {
-    color: white;
-    background-color: red;
-    width: 30px;
-    height: 30px;
+    background-color: wheat;
+    width: 50px;
+    height: 50px;
     border-radius: 5rem;
-    text-align: center;
     display: grid;
     align-items: center;
-    font-family: sans-serif;
-    font-size: 1rem;
   }
-
-  #dots-wrapper {
-    position: relative;
-    display: flex;
-    width: 50px;
-  }
-
-  .dots {
-    width: 10px;
-    height: 10px;
-    border-radius: 5rem;
-    background-color: white;
-    z-index: 6
+  #number > span {
+    margin-left: 20px;
   }
 </style>

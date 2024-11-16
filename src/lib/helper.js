@@ -1,9 +1,3 @@
-  // Forest 4st = 1
-  // brick 3st = 2
-  // hö 4st = 3
-  // sten 3st = 4
-  // öken 1st = 5
-  // får 4st = 6
 export function shuffleArray(array) {  
   for (let i = array.length - 1; i > 0; i--) {
       // Generate a random index between 0 and i
@@ -13,3 +7,49 @@ export function shuffleArray(array) {
   }
   return array;
 }
+
+export const resources = () => {
+  let resourceMapper = {
+    wood: 4,
+    brick: 3,
+    sheep: 4,
+    wheat: 4,
+    stone: 3,
+    dessert: 1 
+  }
+  let resourcesArray = []
+  
+  Object.keys(resourceMapper).forEach(resource => {
+    let value = resourceMapper[resource]
+    for (let i = 0; i < value; i++) {
+      resourcesArray = [...resourcesArray, resource]
+    }
+  })
+  return resourcesArray
+}
+
+export const gridNumbers = [
+
+  { A: 5 }, 
+  { B: 2 }, 
+  { C: 6 },  
+
+  { L: 10 },
+  { M: 9 },  
+  { N: 4 },  
+  { D: 3 },
+
+  { K: 8 },  
+  { R: 11 },
+  { O: 5 },  
+  { E: 8 },  
+
+  { J: 4 },  
+  { Q: 3 },  
+  { P: 6 },
+  { F: 10 }, 
+
+  { I: 11 }, 
+  { H: 12 },
+  { G: 9 },  
+]
