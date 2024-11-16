@@ -1,5 +1,5 @@
 <script>
-  let { column, row, img, numbers } = $props()
+  export let  column, row, img, numbers 
 
   let left = 100 * column;
   let top = 75 * row;
