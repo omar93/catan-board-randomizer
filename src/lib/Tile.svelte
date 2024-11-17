@@ -12,12 +12,15 @@
   
 </script>
 
-<div id="chit"
-style="position: absolute; 
-  margin-left:{textLeft}px; 
-  margin-top:{textTop}px;">
-  <span class={number === 6 || number === 8 ? "red" : ""}>{number}</span>
-</div>
+{#if number != 0}
+  <div id="chit"
+  style="position: absolute; 
+    margin-left:{textLeft}px; 
+    margin-top:{textTop}px;">
+    <span class={number === 6 || number === 8 ? "red" : ""}>{number}</span>
+  </div>
+{/if}
+
 
 <svg viewBox="0 0 100 100" id="hexagon" 
      style="position: absolute; 
