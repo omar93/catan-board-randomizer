@@ -16,7 +16,7 @@
 style="position: absolute; 
   margin-left:{textLeft}px; 
   margin-top:{textTop}px;">
-  <span>{number}</span>
+  <span class={number === 6 || number === 8 ? "red" : ""}>{number}</span>
 </div>
 
 <svg viewBox="0 0 100 100" id="hexagon" 
@@ -89,4 +89,9 @@ style="position: absolute;
     font-size: 50px;
     font-family: sans-serif;
   }
+
+  .red {
+    color: red;
+  }
+
 </style>
