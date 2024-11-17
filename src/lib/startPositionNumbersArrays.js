@@ -28,5 +28,3 @@ const adjustedRows = [
 
 // Combine rows back into the final shifted array
 const shiftedGrid = adjustedRows.flat();
-
-console.log(shiftedGrid);

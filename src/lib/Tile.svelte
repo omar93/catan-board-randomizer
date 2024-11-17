@@ -1,5 +1,5 @@
 <script>
-  export let  column, row, img, numbers 
+  let { column, row, resource, numbers } = $props()
 
   let left = 100 * column;
   let top = 75 * row;
@@ -19,7 +19,7 @@
     <div class="dots"></div>
     {/each}
   </div> -->
-  <span>{numbers[Object.keys(numbers)]}</span>
+  <!-- <span>{numbers[Object.keys(numbers)]}</span> -->
 </div>
 
 <svg viewBox="0 0 100 100" id="hexagon" 
@@ -43,7 +43,7 @@ style="position: absolute; margin-left:{left}; margin-top:{top}; z-index: -1">
   <!--Image-->
 
   <image
-    href="{img}.png"
+    href="{resource}.png"
     x="0"
     y="0"
     width="100"
