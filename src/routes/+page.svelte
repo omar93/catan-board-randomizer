@@ -5,10 +5,11 @@
 
 <div id="wrapper">
   {#each $tiles as {row, column, resource}}
-  <Tile row={row} {column} {resource}/>
+    <Tile row={row} {column} {resource}/>
   {/each}
-
 </div>
+
+
 
 <style>
   :global(*) {
@@ -25,6 +26,7 @@
 
   #wrapper {
     flex: 1;
-    background-color: rgb(97, 92, 92);
+    margin-left: 45%;
+    margin-top: 0%;
   }
 </style>

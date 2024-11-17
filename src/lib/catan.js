@@ -32,31 +32,36 @@ const createTileTypes = (resourceMapper) => {
 }
 
 let createdTiles = createTileTypes(resourceMapper)
-let shuffeledTiles = shuffleArray(createdTiles)
+let shuffledTiles = shuffleArray(createdTiles)
 
 export const tiles = writable([
-  {row: 1, column: 1, resource: shuffeledTiles.pop()},
-  {row: 1, column: 2, resource: shuffeledTiles.pop()},
-  {row: 1, column: 3, resource: shuffeledTiles.pop()},
+  // Row 0 (3 tiles)
+  { row: 0, column: -1, resource: shuffledTiles.pop() },
+  { row: 0, column: 0, resource: shuffledTiles.pop() },
+  { row: 0, column: 1, resource: shuffledTiles.pop() },
 
-  {row: 2, column: 1, resource: shuffeledTiles.pop()},
-  {row: 2, column: 2, resource: shuffeledTiles.pop()},
-  {row: 2, column: 3, resource: shuffeledTiles.pop()},
-  {row: 2, column: 4, resource: shuffeledTiles.pop()},
+  // Row 1 (4 tiles)
+  { row: 1, column: -1.5, resource: shuffledTiles.pop() },
+  { row: 1, column: -0.5, resource: shuffledTiles.pop() },
+  { row: 1, column: 0.5, resource: shuffledTiles.pop() },
+  { row: 1, column: 1.5, resource: shuffledTiles.pop() },
 
-  {row: 3, column: 1, resource: shuffeledTiles.pop()},
-  {row: 3, column: 2, resource: shuffeledTiles.pop()},
-  {row: 3, column: 3, resource: shuffeledTiles.pop()},
-  {row: 3, column: 4, resource: shuffeledTiles.pop()},
-  {row: 3, column: 5, resource: shuffeledTiles.pop()},
+  // Row 2 (5 tiles) 
+  { row: 2, column: -2, resource: shuffledTiles.pop() },
+  { row: 2, column: -1, resource: shuffledTiles.pop() },
+  { row: 2, column: 0, resource: shuffledTiles.pop() },
+  { row: 2, column: 1, resource: shuffledTiles.pop() },
+  { row: 2, column: 2, resource: shuffledTiles.pop() },
 
-  {row: 4, column: 1, resource: shuffeledTiles.pop()},
-  {row: 4, column: 2, resource: shuffeledTiles.pop()},
-  {row: 4, column: 3, resource: shuffeledTiles.pop()},
-  {row: 4, column: 4, resource: shuffeledTiles.pop()},
+  // Row 3 (4 tiles)
+  { row: 3, column: -1.5, resource: shuffledTiles.pop() },
+  { row: 3, column: -0.5, resource: shuffledTiles.pop() },
+  { row: 3, column: 0.5, resource: shuffledTiles.pop() },
+  { row: 3, column: 1.5, resource: shuffledTiles.pop() },
 
-  {row: 5, column: 1, resource: shuffeledTiles.pop()},
-  {row: 5, column: 2, resource: shuffeledTiles.pop()},
-  {row: 5, column: 3, resource: shuffeledTiles.pop()},
+  // Row 4 (3 tiles)
+  { row: 4, column: -1, resource: shuffledTiles.pop() },
+  { row: 4, column: 0, resource: shuffledTiles.pop() },
+  { row: 4, column: 1, resource: shuffledTiles.pop() },
 ])
 
