@@ -1,9 +1,21 @@
 <script>
-  let { column, row, resource, size = 270 } = $props()
+  const { column, row, resource, number, size = 270 } = $props()
   
-  let left = column * size
-  let top = row * (size * 0.75)
+  const left = column * size
+  const top = row * (size * 0.75)
+
+  const textLeft = left+120
+  const textTop = top+100
+  
 </script>
+
+<span
+style="position: absolute; 
+  margin-left:{textLeft}px; 
+  margin-top:{textTop}px;"
+  >
+  {number}
+</span>
 
 <svg viewBox="0 0 100 100" id="hexagon" 
      style="position: absolute; 
@@ -58,5 +70,11 @@
     /* Remove fixed width/height from CSS */
     width: 100%;
     height: 100%;
+  }
+
+  span {
+    z-index: 1;
+    font-size: 50px;
+    font-family: sans-serif;
   }
 </style>

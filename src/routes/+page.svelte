@@ -1,11 +1,19 @@
 <script>
   import Tile from "$lib/Tile.svelte"
+  
   import { tiles } from "$lib/catan.js"
+  import { order } from "$lib/startingPositions"
+  
+  
 </script>
 
 <div id="wrapper">
   {#each $tiles as {row, column, resource}}
-    <Tile row={row} {column} {resource}/>
+    {#if resource != 'dessert'}
+      <Tile row={row} {column} {resource} number={order.pop()}/>
+    {:else}
+      <Tile row={row} {column} {resource} number={0}/>
+    {/if}
   {/each}
 </div>
 
