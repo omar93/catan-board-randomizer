@@ -1,21 +1,23 @@
 <script>
   const { column, row, resource, number, size = 270 } = $props()
+
+  const isDoubleDigit = number >= 10
+  const textMarginLeft = isDoubleDigit ? "20px" : "35px"
   
   const left = column * size
   const top = row * (size * 0.75)
 
-  const textLeft = left+120
-  const textTop = top+100
+  const textLeft = left+80
+  const textTop = top+80
   
 </script>
 
-<span
+<div id="chit"
 style="position: absolute; 
   margin-left:{textLeft}px; 
-  margin-top:{textTop}px;"
-  >
-  {number}
-</span>
+  margin-top:{textTop}px;">
+  <span>{number}</span>
+</div>
 
 <svg viewBox="0 0 100 100" id="hexagon" 
      style="position: absolute; 
@@ -72,8 +74,18 @@ style="position: absolute;
     height: 100%;
   }
 
-  span {
+  #chit {
+    width: 100px;
+    height: 100px;
+    background-color: wheat;
+    border-radius: 10rem;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  span {
     font-size: 50px;
     font-family: sans-serif;
   }
