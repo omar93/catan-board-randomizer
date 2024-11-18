@@ -10,6 +10,8 @@
   const textLeft = left+80
   const textTop = top+80
   
+  console.log(number);
+  
 </script>
 
 {#if number != 0}

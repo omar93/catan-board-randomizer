@@ -3,8 +3,7 @@
   
   import { tiles } from "$lib/catan.js"
   import { order } from "$lib/startingPositions"
-  
-  
+
 </script>
 
 <div id="wrapper">
