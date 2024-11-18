@@ -1,11 +1,11 @@
-const order1 =      ["A", "B", "C", "K", "L", "M", "D", "J", "Q", "R", "N", "E", "I", "P", "O", "F", "H", "G"];
+const order1 =      ["A", , "J", "Q", "R", "N", "E", "I", "P", "O", "F", "H", "G"];
 const topLeftFlat = ["A", "B", "C", "K", "L", "M", "D", "J", "Q", "R", "N", "E", "I", "P", "O", "F", "X", "H", "G"];
 const topLeft = [
-  ["A", "B", "C"],
-  ["K", "L", "M", "D"],
-  ["J", "Q", "R", "N", "E"],
-  ["I", "P", "O", "F"],
-  ["X", "H", "G"]
+      ["A", "B", "C"], // om row 1, move length+1
+    ["K", "L", "M", "D"], // om row 2, move length+1
+  ["J", "Q", "R", "N", "E"], // om row 3 move length -1
+    ["I", "P", "O", "F"], // om row 4 move 
+      ["X", "H", "G"]
 ];
 
 const order2 =       ["K", "L", "A", "J", "Q", "M", "B", "I", "P", "R", "N", "C", "H", "O", "D", "G", "F", "E"];
@@ -79,4 +79,5 @@ export const initialGridNumbers = {
   H: 12,
   G: 9
 }
-export let order = orders[Math.floor(Math.random() * orders.length)].map(key => initialGridNumbers[key])
+export let order = orders[Math.floor(Math.random() * orders.length)].map(key => `${initialGridNumbers[key]}:${key}`)
+

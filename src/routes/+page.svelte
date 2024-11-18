@@ -4,12 +4,20 @@
   import { tiles } from "$lib/catan.js"
   import { order } from "$lib/startingPositions"
 
+  console.log("order:",order);
+  
+
 </script>
 
+<ul>
+  {#each order as order,i}
+    <li>{order} - {$tiles[i].resource}</li>
+  {/each}
+</ul>
 <div id="wrapper">
   {#each $tiles as {row, column, resource}}
     {#if resource != 'dessert'}
-      <Tile row={row} {column} {resource} number={order.pop()}/>
+      <Tile row={row} {column} {resource} number={order.shift()}/>
     {:else}
       <Tile row={row} {column} {resource} number={0}/>
     {/if}
@@ -29,6 +37,15 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+  }
+
+  ul {
+    position: absolute;
+    font-size: large;
+  }
+
+  li {
+    margin-top: 10px;
   }
 
   #wrapper {
