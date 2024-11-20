@@ -3,10 +3,8 @@
   
   import { tiles } from "$lib/catan.js"
   import { order } from "$lib/startingPositions"
-
-  console.log("order:",order);
+ 
   
-
 </script>
 
 <ul>
@@ -15,11 +13,13 @@
   {/each}
 </ul>
 <div id="wrapper">
-  {#each $tiles as {row, column, resource}}
+
+  <!-- RAD -->
+  {#each $tiles as {row, column, resource}, i}
     {#if resource != 'dessert'}
-      <Tile row={row} {column} {resource} number={order.shift()}/>
+      <Tile row={row} {column} {resource} number={order.shift()} id={i}/>
     {:else}
-      <Tile row={row} {column} {resource} number={0}/>
+      <Tile row={row} {column} {resource} number={0} id={i}/>
     {/if}
   {/each}
 </div>
