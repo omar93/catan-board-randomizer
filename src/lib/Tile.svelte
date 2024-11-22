@@ -1,11 +1,13 @@
 <script>
-  const { column, row, resource, chit, size = 268, id } = $props()
+  const { column, row, resource, chit, size = 250, id } = $props()
   
   let number = chit ? Object.values(chit)[0] : 0
   let letter = chit ? Object.keys(chit)[0] : 0
   
-  const left = (column/2) * size
-  const top = row * (size * 0.75)
+  const left = (column/2) * size*0.88+30
+  const top = row * (size * 0.75)+30
+
+
 
   const textLeft = left+80
   const textTop = top+80
@@ -41,11 +43,12 @@
       <path id="hexagon"
         d="
           M 50 0
-          L 0 25
-          L 0 75
+          L 93.3 25
+          L 93.3 75
           L 50 100
-          L 100 75
-          L 100 25"
+          L 6.7 75
+          L 6.7 25
+          "
       />
     </clipPath>
   </defs>
@@ -65,11 +68,11 @@
   <path
     d="
     M 50 0
-    L 0 25
-    L 0 75
+    L 93.3 25
+    L 93.3 75
     L 50 100
-    L 100 75
-    L 100 25
+    L 6.7 75
+    L 6.7 25
     Z"
     fill="none"
     stroke="black"
