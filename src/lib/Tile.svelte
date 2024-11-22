@@ -3,10 +3,6 @@
   
   let number = chit ? Object.values(chit)[0] : 0
   let letter = chit ? Object.keys(chit)[0] : 0
-
-  
-  const isDoubleDigit = number >= 10
-  const textMarginLeft = isDoubleDigit ? "20px" : "35px"
   
   const left = (column/2) * size
   const top = row * (size * 0.75)
@@ -19,10 +15,15 @@
 
 {#if number != 0}
   <div id="chit"
-  style="position: absolute; 
-    margin-left:{textLeft}px; 
-    margin-top:{textTop}px;">
-    <span class={number === 6 || number === 8 ? "red" : ""}>{letter}{number}</span>
+    style="position: absolute; 
+      margin-left:{textLeft}px; 
+      margin-top:{textTop}px;">
+    <span class={number === 6 || number === 8 ? "red" : ""}>{number}</span>
+    <div id="dots-wrapper">
+      {#each new Array(chit.dots) as dot}
+        <span class="dot">{dot}</span>
+      {/each}
+    </div>
   </div>
 {/if}
 
@@ -83,6 +84,7 @@
     height: 100%;
   }
 
+
   #chit {
     width: 100px;
     height: 100px;
@@ -90,6 +92,7 @@
     border-radius: 10rem;
     z-index: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
@@ -101,6 +104,21 @@
 
   .red {
     color: red;
+  }
+
+  #dots-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 10rem;
+    border: 1px solid black;
+    background-color: black;
   }
 
 </style>

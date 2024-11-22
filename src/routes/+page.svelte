@@ -11,11 +11,6 @@
         <Tile row={row} {column} {resource}/>
       {/if}
   {/each}
-  <!-- <div id="tile">
-    <Hexagon/>
-    
-  </div>
-  <Tile/> -->
 </div>
 
 <style>

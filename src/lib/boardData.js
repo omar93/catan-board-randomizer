@@ -1,23 +1,23 @@
 export const chits = [
-  {A: 5},
-  {B: 2},
-  {C: 6},
-  {D: 3},
-  {E: 8},
-  {F: 10},
-  {G: 9},
-  {H: 12},
-  {I: 11},
-  {J: 4},
-  {K: 8},
-  {L: 10},
-  {M: 9},
-  {N: 4},
-  {O: 5},
-  {P: 6},
-  {Q: 3},
-  {R: 11}
-]
+  { A: 5, dots: 4 },
+  { B: 2, dots: 1 },
+  { C: 6, dots: 5 },
+  { D: 3, dots: 2 },
+  { E: 8, dots: 5 },
+  { F: 10, dots: 3 },
+  { G: 9, dots: 4 },
+  { H: 12, dots: 1 },
+  { I: 11, dots: 2 },
+  { J: 4, dots: 3 },
+  { K: 8, dots: 5 },
+  { L: 10, dots: 3 },
+  { M: 9, dots: 4 },
+  { N: 4, dots: 3 },
+  { O: 5, dots: 4 },
+  { P: 6, dots: 5 },
+  { Q: 3, dots: 2 },
+  { R: 11, dots: 2 }
+];
 
 export const coordinatesList = [
   [
