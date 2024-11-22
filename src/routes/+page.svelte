@@ -1,30 +1,24 @@
 <script>
   import Tile from "$lib/Tile.svelte"
-  
+  import Hexagon from "$lib/hexagon.svelte";
   import { tiles } from "$lib/catan.js"
-  import { order } from "$lib/startingPositions"
- 
-  
+      
 </script>
 
-<ul>
-  {#each order as order,i}
-    <li>{order} - {$tiles[i].resource}</li>
-  {/each}
-</ul>
 <div id="wrapper">
-
-  <!-- RAD -->
-  {#each $tiles as {row, column, resource}, i}
-    {#if resource != 'dessert'}
-      <Tile row={row} {column} {resource} number={order.shift()} id={i}/>
-    {:else}
-      <Tile row={row} {column} {resource} number={0} id={i}/>
-    {/if}
+  {#each $tiles as {row, column, resource, chit}, i}
+      {#if resource != 'desert'}
+        <Tile row={row} {column} {resource} {chit}/>
+      {:else}
+        <Tile row={row} {column} {resource}/>
+      {/if}
   {/each}
+  <!-- <div id="tile">
+    <Hexagon/>
+    
+  </div>
+  <Tile/> -->
 </div>
-
-
 
 <style>
   :global(*) {
@@ -39,18 +33,13 @@
     flex-direction: column;
   }
 
-  ul {
-    position: absolute;
-    font-size: large;
-  }
-
-  li {
-    margin-top: 10px;
-  }
-
   #wrapper {
     flex: 1;
     margin-left: 45%;
     margin-top: 0%;
+  }
+
+  #tile {
+    margin-right: 500px;
   }
 </style>

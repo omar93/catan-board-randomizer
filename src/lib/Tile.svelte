@@ -1,17 +1,18 @@
 <script>
-  const { column, row, resource, number, size = 270, id } = $props()
+  const { column, row, resource, chit, size = 270, id } = $props()
+  
+  let number = chit ? Object.values(chit)[0] : 0
+  let letter = chit ? Object.keys(chit)[0] : 0
 
+  
   const isDoubleDigit = number >= 10
   const textMarginLeft = isDoubleDigit ? "20px" : "35px"
   
-  const left = column * size
+  const left = (column/2) * size
   const top = row * (size * 0.75)
 
   const textLeft = left+80
   const textTop = top+80
-
-  console.log(number);
-  
   
   
 </script>
@@ -21,7 +22,7 @@
   style="position: absolute; 
     margin-left:{textLeft}px; 
     margin-top:{textTop}px;">
-    <span class={number === 6 || number === 8 ? "red" : ""}>{number} - {id}</span>
+    <span class={number === 6 || number === 8 ? "red" : ""}> {letter}:{number}</span>
   </div>
 {/if}
 

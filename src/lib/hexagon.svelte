@@ -1,14 +1,13 @@
 <script>
 
-  let { size = 600, resource} = $props()
+  const { size = 600, resource} = $props()
   
-  let points = $derived(calculatePoints(size))
+  const h = $state(size);
+  const w = $state(size * 0.866); // cos(30°) * size
   
-  
+  const points = $derived(calculatePoints(size))
+   
   function calculatePoints(size) {
-    const h = size;
-    const w = size * 0.866; // cos(30°) * size
-    
     return [
       `${w/2},0`,      // top
       `${w},${h/4}`,   // top right
@@ -20,7 +19,7 @@
   }
 </script>
 
-<svg width={size * 0.866} height={size}>
+<svg width={w} height={h}>
   <defs>
     <pattern id="bg-pattern" patternUnits="userSpaceOnUse" width="100%" height="100%">
       <image href="{resource}.png" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>
