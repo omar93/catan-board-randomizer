@@ -22,7 +22,7 @@
   style="position: absolute; 
     margin-left:{textLeft}px; 
     margin-top:{textTop}px;">
-    <span class={number === 6 || number === 8 ? "red" : ""}>{number}</span>
+    <span class={number === 6 || number === 8 ? "red" : ""}>{letter}{number}</span>
   </div>
 {/if}
 

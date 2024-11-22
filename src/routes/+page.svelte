@@ -1,8 +1,6 @@
 <script>
   import Tile from "$lib/Tile.svelte"
-  import Hexagon from "$lib/hexagon.svelte";
-  import { tiles } from "$lib/catan.js"
-      
+  import { tiles } from "$lib/boardGenerator.js"
 </script>
 
 <div id="wrapper">
