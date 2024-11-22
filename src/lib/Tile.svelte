@@ -1,5 +1,5 @@
 <script>
-  const { column, row, resource, chit, size = 270, id } = $props()
+  const { column, row, resource, chit, size = 268, id } = $props()
   
   let number = chit ? Object.values(chit)[0] : 0
   let letter = chit ? Object.keys(chit)[0] : 0
@@ -22,7 +22,7 @@
   style="position: absolute; 
     margin-left:{textLeft}px; 
     margin-top:{textTop}px;">
-    <span class={number === 6 || number === 8 ? "red" : ""}> {letter}:{number}</span>
+    <span class={number === 6 || number === 8 ? "red" : ""}>{number}</span>
   </div>
 {/if}
 
@@ -72,6 +72,7 @@
     Z"
     fill="none"
     stroke="black"
+    stroke-width="2"
   />
 </svg>
 

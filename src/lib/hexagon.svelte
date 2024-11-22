@@ -1,6 +1,6 @@
 <script>
 
-  const { size = 600, resource} = $props()
+  const { size = 270, resource} = $props()
   
   const h = $state(size);
   const w = $state(size * 0.866); // cos(30°) * size

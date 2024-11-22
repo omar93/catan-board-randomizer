@@ -31,15 +31,12 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: aqua;
   }
 
   #wrapper {
     flex: 1;
     margin-left: 45%;
     margin-top: 0%;
-  }
-
-  #tile {
-    margin-right: 500px;
   }
 </style>
