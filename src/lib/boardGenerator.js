@@ -9,6 +9,7 @@ const createTileTypes = (resourceMapper) => {
       tilesList = [...tilesList, resourceType]
     }
   })
+  
   return tilesList
 }
 

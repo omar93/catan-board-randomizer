@@ -1,13 +1,13 @@
 <script>
-  const { column, row, resource, chit, size = 250, id } = $props()
+  const { column, row, resource, chit, size = 260, id } = $props()
+
+  
   
   let number = chit ? Object.values(chit)[0] : 0
   let letter = chit ? Object.keys(chit)[0] : 0
   
-  const left = (column/2) * size*0.88+30
+  const left = (column/2.05) * size*0.88+30
   const top = row * (size * 0.75)+30
-
-
 
   const textLeft = left+80
   const textTop = top+80

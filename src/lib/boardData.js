@@ -17,29 +17,29 @@ export const chits = [
   { P: 6, dots: 5 },
   { Q: 3, dots: 2 },
   { R: 11, dots: 2 }
-];
+]
 
 export const coordinatesList = [
   [
-    { row: 0, column: -2},
-    { row: 0, column: 0},
-    { row: 0, column: 2},
-    { row: 1, column: 3},
-    { row: 2, column: 4},
-    { row: 3, column: 3},
-    { row: 4, column: 2},
-    { row: 4, column: 0},
-    { row: 4, column: -2},
-    { row: 3, column: -3},
-    { row: 2, column: -4},
-    { row: 1, column: -3},
-    { row: 1, column: -1},
-    { row: 1, column: 1},
-    { row: 2, column: 2},
-    { row: 3, column: 1},
-    { row: 3, column: -1},
-    { row: 2, column: -2},
-    {row: 2, column: 0}
+    {harbor: true, row: 0, column: -2},
+    {harbor: false, row: 0, column: 0},
+    {harbor: true, row: 0, column: 2},
+    {harbor: false, row: 1, column: 3},
+    {harbor: false, row: 2, column: 4},
+    {harbor: false, row: 3, column: 3},
+    {harbor: false, row: 4, column: 2},
+    {harbor: false, row: 4, column: 0},
+    {harbor: false, row: 4, column: -2},
+    {harbor: false, row: 3, column: -3},
+    {harbor: false, row: 2, column: -4},
+    {harbor: false, row: 1, column: -3},
+    {harbor: false, row: 1, column: -1},
+    {harbor: false, row: 1, column: 1},
+    {harbor: false, row: 2, column: 2},
+    {harbor: false, row: 3, column: 1},
+    {harbor: false, row: 3, column: -1},
+    {harbor: false, row: 2, column: -2},
+    {harbor: false,row: 2, column: 0}
   ],
   [
     { row: 0, column: 2},  
@@ -156,3 +156,24 @@ export const resourceMapper = {
   stone: 3,
   desert: 1
 }
+
+export const harbors = [
+  // Top harbors
+  { row: 0, column: -2, type: "3:1", rotate: 5 }, // Top-left
+  { row: 0, column: 0, type: "3:1", rotate: 0 },  // Top-right
+  
+  // Right side harbors
+  { row: 1, column: 3, type: "3:1", rotate: 1 },  // Right-top
+  { row: 3, column: 3, type: "3:1", rotate: 2 },  // Right-bottom
+  
+  // Bottom harbors
+  { row: 4, column: 0, type: "3:1", rotate: 2 },  // Bottom-right
+  { row: 4, column: -2, type: "3:1", rotate: 3 }, // Bottom-left
+  
+  // Left side harbors
+  { row: 3, column: -3, type: "3:1", rotate: 4 }, // Left-bottom
+  { row: 1, column: -3, type: "3:1", rotate: 4 }, // Left-top
+  
+  // Additional harbor on the right side
+  { row: 2, column: 4, type: "3:1", rotate: 1 },  // Right-middle
+]

@@ -1,17 +1,8 @@
 <script>
-  import Tile from "$lib/Tile.svelte"
-  import { tiles } from "$lib/boardGenerator.js"
+  import Board from "$lib/components/Board.svelte";
 </script>
 
-<div id="wrapper">
-  {#each $tiles as {row, column, resource, chit}, i}
-      {#if resource != 'desert'}
-        <Tile row={row} {column} {resource} {chit}/>
-      {:else}
-        <Tile row={row} {column} {resource}/>
-      {/if}
-  {/each}
-</div>
+<Board/>
 
 <style>
   :global(*) {
@@ -25,11 +16,5 @@
     display: flex;
     flex-direction: column;
     background-color: aqua;
-  }
-
-  #wrapper {
-    flex: 1;
-    margin-left: 45%;
-    margin-top: 0%;
   }
 </style>

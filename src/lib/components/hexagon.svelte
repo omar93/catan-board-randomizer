@@ -22,7 +22,7 @@
 <svg width={w} height={h}>
   <defs>
     <pattern id="bg-pattern" patternUnits="userSpaceOnUse" width="100%" height="100%">
-      <image href="{resource}.png" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>
+      <image href="{resource}.png" width="100%" height="100%" preserveAspectRatio=" "/>
     </pattern>
   </defs>
   <polygon {points} fill="url(#bg-pattern)" />
